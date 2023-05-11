@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "start": "node build/index.js",
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
     "build": "tsup src --out-dir build",
     "lint": "eslint --fix"
   },
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "fastify": "^4.17.0",
+    "kafkajs": "^2.2.4",
     "winston": "^3.8.2"
   }
 }
