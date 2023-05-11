@@ -27,6 +27,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "fastify": "^4.17.0",
     "winston": "^3.8.2"
   }
 }
