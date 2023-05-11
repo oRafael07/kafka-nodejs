@@ -8,18 +8,22 @@ const kafka = new Kafka({
   brokers: ['localhost:29092']
 })
 
-const producer = kafka.producer()
+const producer = kafka.producer({
+  allowAutoTopicCreation: true
+})
 
 app.get('/register', async (req, res) => {
 
   const data = req.query
 
-  await producer.send({
+  const result = await producer.send({
     topic: 'sso.user.created',
     messages: [
       { value: JSON.stringify(data) },
-    ],
+    ]
   })
+
+  return result
 })
 
 app.listen({
